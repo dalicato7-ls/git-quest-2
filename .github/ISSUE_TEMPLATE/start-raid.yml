@@ -1,0 +1,23 @@
+name: Start the Raid (team)
+description: Register your team repository. One issue per team, opened by the captain.
+title: "[RAID] Team "
+labels: ["raid"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Team raid
+        Before submitting, the captain must have:
+        1. created a **public** repository from the **git-raid** template,
+        2. listed every member in `TEAM.md`,
+        3. invited the members as collaborators,
+        4. protected `main` with a ruleset (pull request + 1 approval).
+        Put your team name in the title.
+  - type: input
+    id: repo
+    attributes:
+      label: Team repository
+      description: The full link, e.g. https://github.com/captain/raid-lighthouse
+      placeholder: https://github.com/captain/raid-teamname
+    validations:
+      required: true

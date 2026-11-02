@@ -1,0 +1,39 @@
+# Quest Master (season 2): runs ONLY in the HQ repository.
+# It never checks out or runs code from forks or team repos: it clones them bare and reads git objects.
+name: Quest Master
+
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: quest-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  quest:
+    if: >-
+      github.event.repository.fork == false && !github.event.issue.pull_request && (
+        (github.event_name == 'issues' && (startsWith(github.event.issue.title, '[QUEST]') || startsWith(github.event.issue.title, '[RAID]'))) ||
+        (github.event_name == 'issue_comment' && startsWith(github.event.comment.body, '/check')) )
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Checkout HQ (never a fork)
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Run the Quest Master
+        env:
+          GITHUB_TOKEN: ${{ secrets.QUEST_TOKEN || secrets.GITHUB_TOKEN }}
+          QUEST_SALT: ${{ secrets.QUEST_SALT }}
+          FLAG_MODE: ${{ vars.FLAG_MODE }}
+        run: python3 .github/quest/bot.py

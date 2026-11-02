@@ -1,0 +1,18 @@
+name: Start the Quest (solo)
+description: Season 2 solo quest. The Quest Master guides you level by level.
+title: "[QUEST] Agent reporting for duty"
+labels: ["quest"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Git Quest · Season 2
+        Before submitting: **Fork** this repository (keep the name `git-quest-2`).
+        The Quest Master answers in this issue within about 30 seconds.
+  - type: checkboxes
+    id: ready
+    attributes:
+      label: Checklist
+      options:
+        - label: I forked this repository to my own account
+          required: true

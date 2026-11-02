@@ -1,0 +1,27 @@
+{
+  "flag_prefix": "SecurinetsENIT",
+  "default_branch": "main",
+  "messy_branch": "messy/login",
+  "experimental_branch": "release/experimental",
+  "security_subject": "fix(security): escape username in greeting",
+  "squash_message": "feat: add login form",
+  "release_tag": "v1.0.0",
+  "raid_template": "git-raid",
+  "levels": [
+    {"n": 0, "id": "s2-enlist",    "title": "Enlist",        "skills": "fork"},
+    {"n": 1, "id": "s2-clean",     "title": "Clean Room",    "skills": ".gitignore · git rm --cached"},
+    {"n": 2, "id": "s2-keymaster", "title": "Keymaster",     "skills": "SSH keys · signed commits"},
+    {"n": 3, "id": "s2-hotfix",    "title": "Hotfix",        "skills": "stash · switch"},
+    {"n": 4, "id": "s2-squash",    "title": "Squash",        "skills": "interactive rebase"},
+    {"n": 5, "id": "s2-pick",      "title": "Surgical Pick", "skills": "cherry-pick · patch"},
+    {"n": 6, "id": "s2-ship",      "title": "Ship v1.0.0",   "skills": "rebase · ff-only · annotated tag · release"}
+  ],
+  "raid_levels": [
+    {"n": 1, "id": "raid-assemble",  "title": "Assemble",          "skills": "template · collaborators · ruleset"},
+    {"n": 2, "id": "raid-ships",     "title": "Everyone Ships",    "skills": "branch · pull request · approval"},
+    {"n": 3, "id": "raid-review",    "title": "Review for Real",   "skills": "request changes · fix · approve"},
+    {"n": 4, "id": "raid-collision", "title": "Collision Course",  "skills": "conflict on a PR · update branch"},
+    {"n": 5, "id": "raid-release",   "title": "Ship It",           "skills": "annotated tag · release notes"},
+    {"n": 6, "id": "raid-gate",      "title": "BONUS · Gatekeeper","skills": "required status check"}
+  ]
+}
