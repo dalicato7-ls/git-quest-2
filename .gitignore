@@ -1,5 +1,6 @@
-
+.env
 ! .env.example
 __pychache__/
 build/
 *.log
+
