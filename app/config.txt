@@ -1,5 +1,5 @@
 # Operation Lighthouse - server config
 service: lighthouse
-theme: light
+theme: dark
 timeout: 0
 retries: 3
