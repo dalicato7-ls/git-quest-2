@@ -3,3 +3,4 @@ service: lighthouse
 theme: dark
 timeout: 0
 retries: 3
+accent: purple
