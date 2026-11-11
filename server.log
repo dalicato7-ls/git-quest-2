@@ -1,4 +1,0 @@
-2026-10-28 09:14:02 INFO  lighthouse starting
-2026-10-28 09:14:03 WARN  timeout is 0, requests will fail instantly
-2026-10-28 09:14:05 ERROR request /api/agents failed: timeout
-2026-10-28 09:14:07 ERROR request /api/agents failed: timeout
