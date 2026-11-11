@@ -3,4 +3,5 @@
 __pychache__/
 build/
 *.log
-
+__pycache__/cache.pyc
+app/__pycache__/x.pyc
